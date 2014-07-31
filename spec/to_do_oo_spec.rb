@@ -21,7 +21,7 @@ describe List do
 
   it("can add tasks") do
     test_list = List.new("School stuff")
-    test_task = Task.new("Learn Ruby")
+    test_task = Task.new("Learn Ruby", "tomorrow", 1)
     test_list.add_task(test_task)
     test_list.tasks.should eq [test_task]
   end
@@ -29,12 +29,12 @@ end
 
 describe Task do
   it 'is initialized with a description' do
-    test_task = Task.new('study for Epicodus assessment')
+    test_task = Task.new('study for Epicodus assessment', "tomorrow", 1)
     test_task.should be_an_instance_of Task
   end
 
   it 'lets you read the task description' do
-    test_task = Task.new('study for Epicodus assessment')
+    test_task = Task.new('study for Epicodus assessment', "tomorrow", 1)
     test_task.description.should eq 'study for Epicodus assessment'
   end
 end
